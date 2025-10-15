@@ -10,6 +10,7 @@ body {
     background: #f9f9f9;
     color: #222;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .container {
@@ -18,33 +19,22 @@ body {
     margin: 0 auto;
 }
 
-/* ====== Header ====== */
-header {
-    background: linear-gradient(120deg, #ffecd2 0%, #fcb69f 100%);
-    padding: 1rem 0 1rem 0;
-    text-align: center;
-}
-
-.header-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.highlight {
-    color: #ff6f61;
-}
 
 /* ====== Navigation ====== */
 nav {
-    background: #222;
-    color: #fff;
+    background: #eb8585;
+    color: #222;
     padding: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -60,37 +50,98 @@ nav {
 }
 
 .nav-links a {
-    color: #fff;
+    color: #222;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .nav-links a:hover {
-    color: #ff6f61;
+    color: #eb0089;
 }
 
-/* ====== About Section ====== */
-.about-section {
-    padding: 2rem 0;
+/* ====== Cover/About Section ====== */
+.cover-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: #f6f8fa;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.03);
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 4rem 0;
 }
 
+.about-text {
+    flex: 1 1 350px;
+    text-align: center;
+}
 
-.about-content h2 {
-    color: #ff6f61;
+.about-text h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0c050a;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+}
+.about-text h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #22304a;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    color: #555;
     margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.about-content p {
-    max-width: 400px;
+.about-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    border: 1px solid #ff6f61;
+    background: #fff;
+    color: #ff6f61;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn.primary-btn {
+    background: #ff6f61;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #ff6f61;
+    color: #fff;
+}
+
+.about-portrait {
+    width: 400px;
+    max-width: 50vw;
+    border-radius: 0px;
+    object-fit: fill;
+    box-shadow: 0 0px 00px rgba(0,0,0,0.10);
+    flex-shrink: 0;
 }
 
 /* ====== Skills Section ====== */
@@ -118,6 +169,7 @@ nav {
 /* ====== Projects Section ====== */
 .projects-section {
     padding: 4rem 0;
+    background: #e0f7fa; 
 }
 
 .projects-section h2 {
@@ -160,6 +212,7 @@ nav {
 .contact-section {
     padding: 3rem 0;
     text-align: center;
+    background: #f3e0fa; /
 }
 
 .contact-section h2 {
@@ -248,10 +301,24 @@ footer a {
         flex-direction: column;
         text-align: center;
     }
-    .projects-grid {
-        grid-template-columns: 1fr;
+    .about-portrait {
+        margin-left: 0;
+        margin-top: 1.5rem;
+        order: 0;
     }
-    .header-content h1 {
+}
+
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+    .about-portrait {
+        width: 200px;
+        max-width: 70vw;
+    }
+    .about-text h1 {
         font-size: 2rem;
     }
 }
